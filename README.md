@@ -1,0 +1,3 @@
+This repository demonstrates a common error in Dockerfiles when using `COPY` to transfer files that are subsequently used in commands within the image. The issue arises when the current working directory within the Docker image isn't properly set before attempting to execute commands that rely on relative paths. This leads to `unittest` discovery failing to find test files.
+
+The `bug.Dockerfile` showcases the problematic Dockerfile. The `solution.Dockerfile` demonstrates the correct approach by setting the working directory using `WORKDIR` before running the tests.
